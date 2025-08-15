@@ -19,7 +19,7 @@ Built with Node.js, Express, and EJS for a clean, simple, and interactive postin
 
 - **Backend:** Node.js, Express.js
 - **Frontend:** HTML, CSS, EJS templates
-- **Other:** JavaScript (vanilla), Bootstrap (if used)
+- **Other:** JavaScript (vanilla)
 
 ---
 
