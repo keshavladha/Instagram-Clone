@@ -1,7 +1,7 @@
 # 📸 Instagram Mini Clone
 
 A lightweight Instagram-inspired web application where users can create posts with captions and location details, and also delete them in real-time.  
-Built with Node.js, Express, and EJS for a clean, simple, and interactive posting experience.
+Built with **Node.js**, **Express**, and **EJS** for a clean, simple, and interactive posting experience.
 
 ---
 
@@ -9,84 +9,95 @@ Built with Node.js, Express, and EJS for a clean, simple, and interactive postin
 
 - **Create Posts** — Add a caption and location for your post.
 - **Delete Posts** — Remove unwanted posts instantly.
-- **Real-time UI Update** — Posts are updated dynamically without refreshing the page.
-- **User-friendly Interface** — Simple layout inspired by Instagram for easy navigation.
-- **Local Storage** — Data is managed in-memory for simplicity (can be connected to a database).
+- **Real-time UI Update** — Posts update dynamically without refreshing.
+- **User-friendly Interface** — Minimal layout inspired by Instagram.
+- **In-Memory Storage** — Simple post handling without database.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
-- **Backend:** Node.js, Express.js
-- **Frontend:** HTML, CSS, EJS templates
-- **Other:** JavaScript (vanilla)
+- **Backend:** Node.js, Express.js  
+- **Frontend:** HTML, CSS, EJS templates  
+- **Other:** Vanilla JavaScript
 
 ---
 
 ## 📂 Project Structure
 
+```
 Instagram-Clone/
 │
-├── node_modules/ # Installed dependencies
-├── public/ # Static assets (CSS, images, client-side JS)
-├── views/ # EJS templates for rendering pages
-│ ├── index.ejs
-│ └── ...
-├── index.js # Main server file
-├── package.json # Project metadata & dependencies
-├── package-lock.json # Lock file for npm dependencies
-└── README.md # Documentation (this file)
-
-
----
-
-
+├── node_modules/       # Installed dependencies
+├── public/             # Static assets (CSS, JS, images)
+├── views/              # EJS templates for rendering UI
+│   ├── index.ejs
+│   └── ...
+├── index.js            # Main server file
+├── package.json        # Dependencies & scripts
+├── package-lock.json   # Lock file for npm dependencies
+└── README.md           # Documentation
+```
 
 ---
 
 ## ⚙️ Installation & Setup
 
-Follow these steps to run the project locally on your machine:
-
-### 1️⃣ Clone the repository:
+### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/keshavladha/Instagram-Clone.git
 cd Instagram-Clone
+```
 
-2️⃣ Install dependencies:
+### 2️⃣ Install dependencies
+```bash
 npm install
+```
 
-3️⃣ Start the server:
+### 3️⃣ Start the server
+```bash
 node index.js
+```
+or
+```bash
+npm start
+```
 
-4️⃣ Open in browser:
+### 4️⃣ Open in browser
+Default:
+```
 http://localhost:8080/cars
+```
 
-📌 Usage
+---
 
-Add a post: Fill in the caption and location fields, then click Post.
+## 📌 Usage
 
-Delete a post: Click the Delete button below any post.
+1. **Add a Post:** Enter caption & location → Click **Post**.  
+2. **Delete a Post:** Click **Delete** under the post.  
+3. **View Feed:** Posts appear instantly in the feed.
 
-View posts: All posts will appear in the feed with their caption and location.
+---
 
-🧩 Future Improvements
+## 🧩 Future Improvements
 
-Connect to a database (MongoDB, PostgreSQL, etc.) for persistent storage.
+- Add database (MongoDB) for persistence.
+- Image upload feature.
+- User authentication system.
+- Mobile UI improvements.
 
-Implement user authentication.
+---
 
-Add image uploads to posts.
+## 🤝 Contributing
 
-Improve mobile responsiveness.
+Pull requests are welcome. For major changes, open an issue to discuss your ideas.
 
-🤝 Contributing
+---
 
-Pull requests are welcome. For major changes, please open an issue first to discuss your ideas.
+## 📄 License
 
-📄 License
+This project is licensed under the MIT License.
 
-This project is open source and available under the MIT License.
+---
 
-Author: Keshav Ladha
-
+**Author:** [Keshav Ladha](https://github.com/keshavladha)
