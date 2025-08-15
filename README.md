@@ -82,7 +82,6 @@ http://localhost:8080/cars
 ## 🧩 Future Improvements
 
 - Add database (MongoDB) for persistence.
-- Image upload feature.
 - User authentication system.
 - Mobile UI improvements.
 
