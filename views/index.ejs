@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instagram Profile Replica — Minimalism Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #e9f5ff;
+      --card: #fff;
+      --text: #111;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --accent: #0095f6;
+      --btn: #efefef;
+      --ig-black: #000;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      background: linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7);
+      background-repeat: no-repeat;
+      /* background-size: cover; Makes it fill the whole element */
+      background-attachment: fixed; /* Optional: keeps it static while scrolling */
+
+    }
+
+    .page {
+      max-width: 1020px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .ig-card {
+      background: var(--card);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+      overflow: hidden;
+      border: 1px solid #dde7f3;
+      
+    }
+
+    .header {
+      padding: 28px 28px 18px;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .avatar-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ring {
+      width: 116px;
+      height: 116px;
+      border-radius: 50%;
+      padding: 4px;
+      background: conic-gradient(#ff8a00, #e52e71, #a043ff, #ff8a00);
+      display: grid;
+      place-items: center;
+    }
+
+    .avatar {
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      background: radial-gradient(#f5f5f5, #dbdbdb);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: #777;
+      font-size: 20px;
+    }
+
+    .topline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .handle {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .badge {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #3897f0;
+      display: inline-grid;
+      place-items: center;
+      color: #fff;
+      font-size: 12px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 1px solid var(--line);
+      background: var(--btn);
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .btn.icon {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+    }
+
+    .stats {
+      display: flex;
+      gap: 28px;
+      margin: 12px 0 10px;
+      font-size: 14px;
+    }
+
+    .stats b {
+      font-weight: 700;
+    }
+
+    .bio {
+      font-size: 14px;
+    }
+
+    .bio .name {
+      font-weight: 700;
+    }
+
+    .bio a {
+      color: #00376b;
+      text-decoration: none;
+    }
+
+    .highlights {
+      display: flex;
+      gap: 18px;
+      padding: 12px 28px 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .hl {
+      text-align: center;
+      width: 80px;
+    }
+
+    .hl .dot {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      display: block;
+      margin: 0 auto 6px;
+      background: radial-gradient(#f2f2f2, #e6e6e6);
+    }
+
+    .hl label {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+      border-top: 1px solid var(--line);
+    }
+
+    .tab {
+      padding: 12px 0;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      border-top: 1.5px solid transparent;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tab.active {
+      color: #000;
+      border-color: #000;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: #000;
+    }
+
+    .tile {
+      background: #fff;
+      aspect-ratio: 1/1;
+      position: relative;
+    }
+
+    .quote {
+      background: #000;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 24px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    .photo {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .p1 {
+      background-image: url('https://images.unsplash.com/photo-1538128835124-7805d3fd3f5d?auto=format&fit=crop&w=1200&q=60');
+    }
+
+    .p2 {
+      background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=60');
+    }
+
+    .p3 {
+      background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=60');
+    }
+
+    .footer {
+      padding: 26px 0 36px;
+      text-align: center;
+      color: #1e3a5f;
+      font-weight: 700;
+      letter-spacing: .03em;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px;
+      background-color: #f7f7f7;
+      border-radius: 10px;
+      max-width: 300px;
+      margin: 50px auto;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .action-buttons button {
+      flex: 1;
+      margin: 0 5px;
+      padding: 10px;
+      border: none;
+      background-color: #e4e6eb;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.2s;
+    }
+
+    .action-buttons button:hover {
+      background-color: #d8dadf;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .insta-actions {
+      display: flex;
+      justify-content: space-between;
+      /* Spread buttons evenly */
+      align-items: center;
+      padding: 8px 0;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .insta-actions button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .insta-actions button:hover {
+      opacity: 0.7;
+    }
+
+    .insta-actions button:active {
+      color: red;
+    }
+
+    @media (max-width: 860px) {
+      .header {
+        grid-template-columns: 120px 1fr;
+      }
+
+      .ring {
+        width: 96px;
+        height: 96px;
+      }
+
+      .avatar {
+        width: 84px;
+        height: 84px;
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        margin: 20px auto;
+        padding: 10px;
+      }
+
+      .header {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+      }
+
+      .stats {
+        justify-content: center;
+      }
+
+      .actions {
+        justify-content: center;
+      }
+
+      .highlights {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="ig-card" >
+      <div class="header">
+        <div class="avatar-wrap">
+          <div class="ring">
+
+            <div class="avatar">ML</div>
+          </div>
+        </div>
+        <div>
+          <div class="topline">
+            <div class="handle">Keshav Ladha</div>
+            <div class="badge" title="Verified">✓</div>
+            <div class="actions">
+              <button class="btn primary">Follow</button>
+              <button class="btn">Message</button>
+              <button class="btn icon" title="More">⋯</button>
+            </div>
+          </div>
+          <div class="stats">
+            <div><b>2,265</b> posts</div>
+            <div><b>322K</b> followers</div>
+            <div><b>16</b> following</div>
+          </div>
+          <div class="bio">
+            <div class="name">BCA Student</div>
+            <div class="muted">Full Stack Developer </div>
+            <div>You can Upload Photos In this Id</div>
+            <div><a href="#">keshavladha24@gmail.com</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlights">
+        <div class="hl"><span class="dot" style="background: radial-gradient(#111,#444);"></span><label>Brands</label>
+        </div>
+        <div class="hl"><span class="dot"
+            style="background: radial-gradient(#fff,#dcdcdc);"></span><label>Wallpapers</label></div>
+        <div class="hl"><span class="dot"
+            style="background: radial-gradient(#f4f4f4,#cfcfcf);"></span><label>Journal</label></div>
+        <div class="hl"><span class="dot" style="background: radial-gradient(#111,#777);"></span><label>Podcast</label>
+        </div>
+        <div class="hl"><span class="dot"
+            style="background: radial-gradient(#e9eef8,#a5b4fc);"></span><label>Contribute</label></div>
+        <div class="hl"><span class="dot" style="background: radial-gradient(#111,#000);"></span><label>Book</label>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <div class="tab active">Posts</div>
+        <div class="tab">Reels</div>
+        <div class="tab">Tagged</div>
+        <button class="btn primary"><a href="http://localhost:8080/cars/new"
+            style="text-decoration: none;color:white">Create New Post</a></button>
+      </div>
+
+        </div>
+      <% for (let pic of photos) { %>
+        <div style="margin-top: 5%;">
+          <div class="ig-card">
+            <img src="<%= pic.source %>" alt="" width="100%">
+            <div class="caption">
+              <p style="text-align: center;"><span style="color: red;">About:</span><br>
+                <%=pic.caption%>
+              </p>
+            </div>
+            <div class="insta-actions">
+              <button class="react"
+                style="background-color:rgb(49, 181, 233); color: white; padding: 10px 20px; border: none; border-radius: 5px;">Like</button>
+              <button class="react"
+                style="background-color:rgb(52, 177, 227); color: white; padding: 10px 20px; border: none; border-radius: 5px;">Comment</button>
+              <button class="react"
+                style="background-color:rgb(34, 174, 230); color: white; padding: 10px 20px; border: none; border-radius: 5px;">Share</button>
+            </div>
+          </div>
+        </div>
+        <!-- Corrected form --> <br><br>
+        <form method="POST" action="/cars/<%= pic.id %>?_method=DELETE">
+          <button class="react"
+            style="margin-left: 43.3%; background-color:rgb(246, 145, 2); color: white; padding: 10px 20px; border: none; border-radius: 5px;font-weight: bolder;">Delete
+            Post</button>
+        </form>
+        <% } %>
+
+    </div>
+  </div>
+
+  <div class="footer" style="color: white;">KESHAV LADHA</div>
+  </div>
+</body>
+
+</html>
